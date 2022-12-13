@@ -9,7 +9,7 @@ setup(
     version="1.0.1",
     author="Waseem Sabir",
     author_email="waseemsabir99@gmail.com",
-    description="A small package to calculate the approximate size of a firestore document",
+    description="Python library to calculate the approximate size of a firestore document",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/WaseemSabir/firestore_size",
