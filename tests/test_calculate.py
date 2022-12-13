@@ -22,3 +22,26 @@ def test_document_size():
     assert document_size(None) == additional_document_size + 1
     assert document_size({"abc": None}) == additional_document_size + 5
     assert document_size(["abc", None]) == additional_document_size + 5
+
+    # check for lists
+    assert document_size(["abc", "abc"]) == additional_document_size + 8
+    assert document_size([123, 123]) == additional_document_size + 16
+    assert document_size([False, True]) == additional_document_size + 2
+
+    # check for dicts
+    assert document_size({"abc": "abc"}) == additional_document_size + 8
+    assert document_size({"123": 123}) == additional_document_size + 12
+    assert document_size({"False": True}) == additional_document_size + 7
+
+    # check for nested dicts
+    assert (
+        document_size({"key": {"name": "abc", "age": 123, "active": True}})
+        == 33 + additional_document_size
+    )
+    assert document_size({"key": ["abc", 123, True]}) == (17 + additional_document_size)
+
+    # check for nested lists
+    assert document_size([{"name": "abc", "age": 123, "active": True}]) == (
+        29 + additional_document_size
+    )
+    assert document_size([["abc", 123, True]]) == (13 + additional_document_size)
