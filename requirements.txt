@@ -19,4 +19,5 @@ six==1.16.0
 twine==4.0.2
 urllib3==1.26.13
 webencodings==0.5.1
+wheel==0.38.4
 zipp==3.11.0
