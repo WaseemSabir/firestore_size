@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 
 setup(
-    name="firestore-size",
+    name="firestore_size",
     version="1.0.0",
     author="Waseem Sabir",
     author_email="waseemsabir99@gmail.com",
@@ -13,7 +13,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject",
-    packages=find_packages(include=['firestore-size']),
+    packages=find_packages(include=['firestore_size']),
     license='MIT',
     classifiers=[
         "Programming Language :: Python :: 3",
