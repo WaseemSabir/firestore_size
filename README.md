@@ -51,5 +51,7 @@ Does not take into account indexing. Indexes can be disabled - [docs](https://fi
 
 Create issues for any bugs caught. Fork the repo to your account and send pull request with your changes.
 
-## Credits
-- [alekslario: firestore-size](https://github.com/alekslario/firestore-size)
+Run tests using
+```bash
+python3 setup.py pytest
+```
