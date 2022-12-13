@@ -22,10 +22,6 @@ def _object_size(obj: any) -> int:
     if obj is None:
         return 1
 
-    if hasattr(obj, "_lat") or hasattr(obj, "latitude"):
-        # is a GeoPoint
-        return 16
-
     if hasattr(obj, "_bytes"):
         # is a Blob
         return len(obj._bytes)
@@ -50,6 +46,10 @@ def _object_size(obj: any) -> int:
                 for key, value in obj.items()
             ]
         )
+
+    if hasattr(obj, "_lat") or hasattr(obj, "latitude"):
+        # is a GeoPoint
+        return 16
 
     return 0
 
