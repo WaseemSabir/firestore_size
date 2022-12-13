@@ -22,7 +22,7 @@ def _object_size(obj: any) -> int:
     if obj is None:
         return 1
 
-    if callable(obj) and hasattr(obj, "_lat"):
+    if hasattr(obj, "_lat") or hasattr(obj, "latitude"):
         # is a GeoPoint
         return 16
 

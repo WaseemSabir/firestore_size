@@ -1,5 +1,14 @@
 from firestore_size.calculate import document_size
+from datetime import datetime
 
+class MockGeoPoint:
+    def __init__(self, latitude, longitude):
+        self.latitude = latitude
+        self.longitude = longitude
+
+class MockBlob:
+    def __init__(self, bytes):
+        self._bytes = bytes
 
 def test_document_size():
     additional_document_size = (
@@ -11,6 +20,15 @@ def test_document_size():
     assert document_size("abc") == additional_document_size + 4
     assert document_size(123) == additional_document_size + 8
     assert document_size(True) == additional_document_size + 1
+
+    # check for GeoPoint
+    assert document_size(MockGeoPoint(1, 1)) == additional_document_size + 16
+
+    # check for Blob
+    assert document_size(MockBlob(b"abc")) == additional_document_size + 3
+
+    # check for datetime
+    assert document_size(datetime.now()) == additional_document_size + 8
 
     # check for diffrent types of strings
     assert document_size("åß∂ƒ") == additional_document_size + 10
