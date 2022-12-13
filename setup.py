@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="firestore-size",
-    version="0.0.1",
+    version="1.0.0",
     author="Waseem Sabir",
     author_email="waseemsabir99@gmail.com",
     description="A small package to calculate the approximate size of a firestore document",
