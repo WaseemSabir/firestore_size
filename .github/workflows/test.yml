@@ -6,7 +6,6 @@ on:
     paths:
       - 'firestore_size/**'
       - 'tests/**'
-      - '.github/**' # temp
   push:
     branches:
       - master
